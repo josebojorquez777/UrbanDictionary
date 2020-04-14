@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/kobe"
+        android:title="@string/kobe"
+        android:icon="@drawable/kobe_bryant"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/sortThumbsUp"
+        android:title="@string/thumbs_up"
+        android:icon="@drawable/ic_thumb_up_black_24dp"
+        app:showAsAction="collapseActionView|ifRoom"/>
+
+    <item
+        android:id="@+id/sortThumbsDown"
+        android:title="@string/thumbs_down"
+        android:icon="@drawable/ic_thumb_down_black_24dp"
+        app:showAsAction="collapseActionView|ifRoom"/>
+
+</menu>

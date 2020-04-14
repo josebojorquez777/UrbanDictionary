@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.urbandictionary.viewmodel.DictionaryViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_black_mamba"
+        tools:context=".ui.DictionaryFragment">
+
+        <ImageView
+            android:layout_width="@dimen/normal_75dp"
+            android:layout_height="@dimen/normal_65dp"
+            android:src="@drawable/kobe_number_eight"
+            android:layout_marginBottom="@dimen/normal_20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:layout_width="@dimen/normal_100dp"
+            android:layout_height="@dimen/normal_100dp"
+            android:src="@drawable/kobe_number_twentyfour"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="@dimen/normal_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_15dp"
+            app:layout_constraintTop_toTopOf="@+id/btnSearch"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnSearch"
+            android:fadingEdge="horizontal"
+            android:text="@={viewModel.slangWord}"
+            android:hint="@string/search_slang_word"
+            android:autofillHints="@string/search_slang_word"
+            android:inputType="text"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@null" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_button"
+            android:textAllCaps="false"
+            android:textColor="@color/colorGold"
+            android:background="@color/colorPurple"
+            android:layout_marginStart="@dimen/normal_8dp"
+            android:layout_marginEnd="@dimen/normal_15dp"
+            android:layout_marginTop="@dimen/normal_15dp"
+            android:onClick="@{() -> viewModel.searchWord()}"
+            app:layout_constraintStart_toEndOf="@+id/etSearch"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDictionary"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_0dp"
+            android:layout_marginTop="@dimen/normal_8dp"
+            app:adapter="@{viewModel.adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/btnSearch"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
