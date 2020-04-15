@@ -1,18 +1,14 @@
 package com.example.urbandictionary
 
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.assertion.ViewAssertions
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.example.urbandictionary.di.modules.AppModule
 import com.example.urbandictionary.models.DictionaryResponse
 import com.example.urbandictionary.network.DictionaryApi
+import com.example.urbandictionary.ui.MainActivity
 import com.google.gson.Gson
-import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.reactivex.Single
-import junit.framework.Assert
 import junit.framework.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Rule

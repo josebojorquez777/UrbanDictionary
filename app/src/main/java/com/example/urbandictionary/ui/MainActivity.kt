@@ -1,15 +1,8 @@
-package com.example.urbandictionary
+package com.example.urbandictionary.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import androidx.fragment.app.Fragment
-import com.example.urbandictionary.ui.DictionaryFragment
-import dagger.android.AndroidInjection
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
-import javax.inject.Inject
+import com.example.urbandictionary.R
 
 class MainActivity : AppCompatActivity() {
 
